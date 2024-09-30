@@ -1,4 +1,4 @@
-name: Frontend
+name: client
 
 on:
     push:
@@ -9,7 +9,7 @@ on:
             - master
 
 jobs:
-    frontend-build:
+    client:
         runs-on: ubuntu-latest
 
         steps:
@@ -22,19 +22,19 @@ jobs:
                   node-version: "18"
 
             - name: Install dependencies
-              working-directory: ./frontend
+              working-directory: ./client
               run: npm install
 
             - name: Run Lint
-              working-directory: ./frontend
+              working-directory: ./client
               run: npm run lint
 
             - name: Build the project
-              working-directory: ./frontend
+              working-directory: ./client
               run: npm run build
 
             - name: Upload Production Build as Artifact
               uses: actions/upload-artifact@v3
               with:
                   name: nextjs-build
-                  path: ./frontend/.next
+                  path: ./client/.next

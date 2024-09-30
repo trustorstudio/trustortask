@@ -1,4 +1,4 @@
-name: Contract CI
+name: contract CI
 
 on:
     push:
@@ -11,7 +11,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        name: Build and Check Contract in ./contract
+        name: contract
 
         steps:
             - name: Checkout repository
@@ -30,7 +30,6 @@ jobs:
               working-directory: ./contract
               run: aiken check -D
 
-            - name: Build Contract
+            - name: Build contract
               working-directory: ./contract
               run: aiken build
-
