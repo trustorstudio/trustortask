@@ -1,18 +1,36 @@
-name: Contract
+name: Contract CI
 
 on:
     push:
-        branches: ["master"]
+        branches:
+            - master
     pull_request:
+        branches:
+            - "*"
 
 jobs:
     build:
         runs-on: ubuntu-latest
+        name: Build and Check Contract in ./contract
+
         steps:
-            - uses: actions/checkout@v3
-            - uses: aiken-lang/setup-aiken@v1
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up Aiken
+              uses: aiken-lang/setup-aiken@v1
               with:
                   version: v1.1.0
-            - run: aiken fmt --check
-            - run: aiken check -D
-            - run: aiken build
+
+            - name: Format Check
+              working-directory: ./contract
+              run: aiken fmt --check
+
+            - name: Lint and Type Check
+              working-directory: ./contract
+              run: aiken check -D
+
+            - name: Build Contract
+              working-directory: ./contract
+              run: aiken build
+
