@@ -1,4 +1,4 @@
-name: contract CI
+name: contract
 
 on:
     push:

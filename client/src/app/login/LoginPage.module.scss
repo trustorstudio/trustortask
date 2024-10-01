@@ -1,0 +1,52 @@
+.wrapper {
+    background: center center / cover #13161b;
+    position: fixed;
+    inset: 0px;
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10vh 14vw 4vh;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.social-media {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+}
+
+.social-media-image {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: cover;
+}
+
+.login-wrapper {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.login-web-2 {
+
+}
+
+.footer {
+    padding-bottom: 2rem;
+    text-align: center;
+}

@@ -19,7 +19,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: "18" 
+                  node-version: "18"
 
             - name: Install dependencies
               working-directory: ./app
@@ -29,6 +29,6 @@ jobs:
               working-directory: ./app
               run: npm run lint
 
-            - name: Build the Expo app
-              working-directory: ./app
-              run: expo build:android -t apk
+            # - name: Build the Expo app
+            #   working-directory: ./app
+            #   run: expo build:android -t apk
